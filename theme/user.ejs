@@ -1,0 +1,20 @@
+<% include header %>
+
+<div class="container">
+  <div class="ui two column centered grid">
+    <div class="left floated left aligned four wide column">
+      <% include partials/userCard %>
+      <% if ($this.session.user) { %>
+        <% include partials/createCard %>
+      <% } %>
+      <% include partials/noReplyCard %>
+      <% include partials/linkCard %>
+      <% include partials/connectCard %>
+    </div>
+    <div class="right floated twelve wide column">
+      <% include partials/list %>
+    </div>
+  </div>
+</div>
+
+<% include footer %>

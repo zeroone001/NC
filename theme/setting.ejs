@@ -1,0 +1,45 @@
+<% include header %>
+<div class="container">
+    <div class="ui two column centered grid">
+        <div class="left floated left aligned four wide column">
+            <% var name = this.session.user.name; %>
+            <% include partials/userCard %>
+            <% include partials/noReplyCard %>
+            <% include partials/connectCard %>
+        </div>
+        <div class="right floated twelve wide column">
+            <form method="post" class="ui form">
+                <div class="field">
+                    <label>用户名</label>
+                    <input type="text" name="name" placeholder="">
+                </div>
+                <div class="field">
+                    <label>电子邮件</label>
+                    <input type="text" name="email" placeholder="">
+                </div>
+                <div class="field">
+                    <label>个人网站</label>
+                    <input type="text" name="personalweb" placeholder="">
+                </div>
+                <div class="field">
+                    <label>所在地</label>
+                    <input type="text" name="place" placeholder="">
+                </div>
+                <div class="field">
+                    <label>微博</label>
+                    <input type="text" name="weibo" placeholder="">
+                </div>
+                <div class="field">
+                    <label>Github</label>
+                    <input type="text" name="github" placeholder="">
+                </div>
+                <div class="field">
+                    <label>个性签名</label>
+                    <input type="text" name="signature" placeholder="">
+                </div>
+                <input class="ui button" type="submit">保存设置</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include footer %>
