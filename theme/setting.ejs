@@ -7,37 +7,40 @@
             <% include partials/noReplyCard %>
             <% include partials/connectCard %>
         </div>
-        <div class="right floated twelve wide column">
+        <div class="right floated twelve wide column" id="settings">
             <form method="post" class="ui form">
+                <% var name = $this.session.user.name %>
+                <% var objuser = yield $User.getUserByName(name) %>
                 <div class="field">
                     <label>用户名</label>
-                    <input type="text" name="name" placeholder="">
+                    <input type="text" name="name" placeholder="" value="<%= $this.session.user.name %>">
                 </div>
                 <div class="field">
                     <label>电子邮件</label>
-                    <input type="text" name="email" placeholder="">
+                    <input type="text" name="email" placeholder="" value="<%= $this.session.user.email %>">
                 </div>
                 <div class="field">
                     <label>个人网站</label>
-                    <input type="text" name="personalweb" placeholder="">
+                    <input type="text" name="personalweb" value="<%= objuser.personalweb %>" placeholder="">
                 </div>
                 <div class="field">
                     <label>所在地</label>
-                    <input type="text" name="place" placeholder="">
+                    <input type="text" name="place" value="<%= objuser.place %>" placeholder="">
                 </div>
                 <div class="field">
                     <label>微博</label>
-                    <input type="text" name="weibo" placeholder="">
+                    <input type="text" name="weibo" value="<%= objuser.weibo %>" placeholder="">
                 </div>
                 <div class="field">
                     <label>Github</label>
-                    <input type="text" name="github" placeholder="">
+                    <input type="text" name="github" value="<%= objuser.github %>" placeholder="">
                 </div>
                 <div class="field">
                     <label>个性签名</label>
-                    <input type="text" name="signature" placeholder="">
+                    <input type="text" name="signature" value="<%= objuser.signature %>" placeholder="">
                 </div>
-                <input class="ui button" type="submit">保存设置</button>
+                <input type="hidden" value="<%= objuser._id %>" name="_id">
+                <input class="ui button" type="submit" value="保存设置">
             </form>
         </div>
     </div>

@@ -1,5 +1,4 @@
 <% var userInfo = yield $User.getUserByName(name) %>
-
 <div class="ui cards">
   <div class="card">
     <div class="content">
@@ -17,7 +16,7 @@
     <% if ($this.session.user) { %>
       <div class="extra content">
         <a href="/user/<%= userInfo.name %>" class=""><i class="home icon"></i>个人主页</a>
-        <a href="#" class="right floated"><i class="setting icon"></i>设置</a>
+        <a href="/setting" class="right floated"><i class="setting icon"></i>设置</a>
       </div>
     <% } else { %>
       <div class="extra content">

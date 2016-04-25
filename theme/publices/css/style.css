@@ -12,3 +12,17 @@ body{background-color:#f9f9f7;padding-top:100px}
 .ui.pagination{margin-top:10px!important}
 .ui.comments{max-width:100%;font-size:16px}
 .ui.menu .item:before{width:0}
+div#settings form.ui .field input{width:280px;height: 30px;}
+div#settings form.ui .field label{line-height: 30px;display: inline-block;padding-right: 10px;
+    width: 70px;text-align: right;}
+div#settings{
+    background-color: #fff;
+    margin-top: 14px;
+    padding-left: 150px;
+    padding-bottom: 210px;
+}
+div#settings form input.button{
+    background-color: #08c;
+    color: #fff;
+    margin-left: 73px;
+}

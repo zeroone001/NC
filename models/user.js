@@ -8,6 +8,10 @@ var UserSchema = new Schema({
   password: { type: String, required: true },
   gender: { type: String, required: true },
   signature: { type: String },
+  personalweb: {type: String},
+  place: {type: String},
+  weibo: {type:String},
+  github: {type:String},
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 });
