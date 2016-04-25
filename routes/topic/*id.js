@@ -4,6 +4,7 @@ var $Comment = Models.$Comment;
 
 exports.get = function* (id) {
   yield this.render('topic', {
+    ID: id,
     topic: $Topic.getTopicById(id),
     comments: $Comment.getCommentsByTopicId(id)
   });

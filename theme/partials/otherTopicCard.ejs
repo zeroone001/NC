@@ -1,0 +1,17 @@
+<% var name = $this.session.user.name %>
+<% var newTopics = yield $Topic.getNewTopics(name) %>
+<div class="ui cards">
+    <div class="card">
+        <div class="content">
+            <b>作者的其他话题</b>
+            <div class="ui divider"></div>
+            <div class="ui list">
+                <% newTopics.forEach(function(topic){%>
+                <% if(topic._id != ID) {%>
+                <a class="item summary" href="/topic/<%= topic._id %>"><%= topic.title %></a>
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
