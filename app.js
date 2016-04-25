@@ -40,6 +40,7 @@ app.use(scheme(config.schemeConf));
 app.use(routerCache(app, config.routerCacheConf));
 app.use(gzip());
 app.use(render(app, renderConf));
+//控制路由的中间件调用
 app.use(router(app, config.routerConf));
 
 if (module.parent) {
