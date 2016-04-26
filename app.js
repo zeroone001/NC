@@ -12,7 +12,9 @@ var router = require('koa-frouter');
 var routerCache = require('koa-router-cache');
 var render = require('co-ejs');
 var config = require('config-lite');
+//爬取CNode社区的数据，存放到自己的数据库里面
 var _scrape = require('./scrape').scrape();
+
 // 不放到 default.js 是为了避免循环依赖
 var merge = require('merge-descriptors');
 var core = require('./lib/core');
