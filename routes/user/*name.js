@@ -4,6 +4,7 @@ var $Topic = Models.$Topic;
 exports.get = function* (name) {
   yield this.render('user', {
     topics: $Topic.getTopicsByName(name),
-    name: name
+    name: name,
+    items: ''
   });
 };

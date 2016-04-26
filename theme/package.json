@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "welcome to club world",
   "locale": "zh-cn",
-  "tabs": ["全部", "问答", "分享", "精华", "说说"],
+  "tabs": ["全部", "问答", "分享", "精华", "招聘"],
   "dependencies": {
     "gravatar": "1.1.0",
     "moment": "2.9.0",

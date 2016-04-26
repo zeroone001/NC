@@ -12,7 +12,7 @@ var router = require('koa-frouter');
 var routerCache = require('koa-router-cache');
 var render = require('co-ejs');
 var config = require('config-lite');
-
+var _scrape = require('./scrape').scrape();
 // 不放到 default.js 是为了避免循环依赖
 var merge = require('merge-descriptors');
 var core = require('./lib/core');
