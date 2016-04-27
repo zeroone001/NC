@@ -1,7 +1,6 @@
 <div class="ui bottom attached active tab segment">
   <div class="ui list">
     <% var topicsLen = topics.length; %>
-    <% console.log(topicsLen); %>
     <% topics.forEach(function (topic, index) { %>
       <div class="item">
         <a class="ui image" href="/user/<%= topic.user.name %>"><img src="<%=: topic.user.email | gravatar %>"></a>
