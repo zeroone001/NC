@@ -2,18 +2,21 @@
 <div class="container">
     <div class="ui two column centered grid">
         <div class="left floated left aligned four wide column">
-            <% var name = this.session.user.name; %>
+            <% if($this.session.user){%>
+            <% var name = $this.session.user.name; %>
             <% include partials/userCard %>
+            <% } %>
             <% include partials/noReplyCard %>
             <% include partials/connectCard %>
         </div>
         <div class="right floated twelve wide column" id="settings">
+            <% if($this.session.user) {%>
+            <% var na = $this.session.user.name %>
+            <% var objuser = yield $User.getUserByName(na) %>
             <form method="post" class="ui form">
-                <% var name = $this.session.user.name %>
-                <% var objuser = yield $User.getUserByName(name) %>
                 <div class="field">
                     <label>用户名</label>
-                    <input type="text" name="name" placeholder="" value="<%= $this.session.user.name %>">
+                    <input type="text" name="name" placeholder="" value="<%= na %>">
                 </div>
                 <div class="field">
                     <label>电子邮件</label>
@@ -42,6 +45,19 @@
                 <input type="hidden" value="<%= objuser._id %>" name="_id">
                 <input class="ui button" type="submit" value="保存设置">
             </form>
+            <form method="post" class="ui form" id="sec_form">
+                <div class="field">
+                    <label>当前密码</label>
+                    <input type="password" placeholder="当前密码" name="password">
+                </div>
+                <div class="field">
+                    <label>新密码</label>
+                    <input type="password" placeholder="新密码" name="new_pass">
+                </div>
+                <input type="hidden" name="name" value="<%= na %>">
+                <input class="ui button" type="submit" value="更改密码">
+            </form>
+            <%}%>
         </div>
     </div>
 </div>

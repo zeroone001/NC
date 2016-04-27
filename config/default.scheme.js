@@ -22,6 +22,11 @@ module.exports = {
       "body": checkSigninBody
     }
   },
+  "POST /setting": {
+    "request": {
+      "body": checkSettingBody
+    }
+  },
   "(GET|POST) /create": {
     "request": {
       "session": checkLogin
@@ -110,6 +115,17 @@ function checkSigninBody() {
   }
   body.name = validator.trim(body.name);
   body.password = md5(validator.trim(body.password));
+  return true;
+}
+
+function checkSettingBody() {
+  var body = this.request.body;
+  if(!body.password){
+    return true;
+  }
+  body.name = validator.trim(body.name);
+  body.password = md5(validator.trim(body.password));
+  body.new_pass = md5(validator.trim(body.new_pass));
   return true;
 }
 

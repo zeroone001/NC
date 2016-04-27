@@ -9,6 +9,7 @@ exports.post = function* () {
   var data = this.request.body;
 
   var userInfo = yield $User.getUserByName(data.name);
+
   if (!userInfo || (userInfo.password !== data.password)) {
     this.flash = {error: '用户名或密码错误!'};
     return this.redirect('back');

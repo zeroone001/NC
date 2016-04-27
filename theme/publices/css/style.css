@@ -19,10 +19,13 @@ div#settings{
     background-color: #fff;
     margin-top: 14px;
     padding-left: 150px;
-    padding-bottom: 210px;
+    padding-bottom: 62px;
 }
 div#settings form input.button{
     background-color: #08c;
     color: #fff;
     margin-left: 73px;
+}
+#sec_form{
+    margin-top: 30px;
 }
