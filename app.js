@@ -13,7 +13,7 @@ var routerCache = require('koa-router-cache');
 var render = require('co-ejs');
 var config = require('config-lite');
 //爬取CNode社区的数据，存放到自己的数据库里面
-//var _scrape = require('./scrape').scrape();
+var _scrape = require('./scrape').scrape();
 
 // 不放到 default.js 是为了避免循环依赖
 var merge = require('merge-descriptors');
@@ -36,7 +36,7 @@ app.use(session({
 }));
 //作为临时的状态，用一次就销毁,放在用户的session里面
 app.use(flash());
-//参数验证
+//登录注册validate
 app.use(scheme(config.schemeConf));
 //路由缓存中间件
 app.use(routerCache(app, config.routerCacheConf));

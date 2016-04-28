@@ -1,6 +1,7 @@
 var validator = require('validator');
 var crypto = require('crypto');
-
+//登录验证，注册验证，还有加密
+//crypto主要的功能是加密解密
 module.exports = {
   "(GET|POST) /signup": {
     "request": {

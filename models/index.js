@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+//从配置里调用
 var config = require('config-lite').mongodb;
 
 mongoose.connect(config.url, function (err) {
