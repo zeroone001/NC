@@ -12,7 +12,7 @@ var UserSchema = new Schema({
   place: {type: String},
   weibo: {type:String},
   github: {type:String},
-  score: {type:String},
+  score: {type:Number ,default: 0},
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 });
