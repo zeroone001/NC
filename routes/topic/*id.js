@@ -1,6 +1,7 @@
 var Models = require('../../lib/core');
 var $Topic = Models.$Topic;
 var $Comment = Models.$Comment;
+var $User = Models.$User;
 
 exports.get = function* (id) {
   yield this.render('topic', {
@@ -16,7 +17,8 @@ exports.post = function* (id) {
 
   yield [
     $Comment.addComment(data),
-    $Topic.incCommentById(id)
+    $Topic.incCommentById(id),
+    $User.getScoreByName(data.user.name,2)
   ];
 
   this.flash = {success: '回复成功!'};
