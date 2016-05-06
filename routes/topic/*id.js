@@ -11,6 +11,7 @@ exports.get = function* (id) {
   });
 };
 
+//评论的后续操作这里体现
 exports.post = function* (id) {
   var data = this.request.body;
   data.user = this.session.user;
