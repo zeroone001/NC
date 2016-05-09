@@ -26,7 +26,7 @@ merge(renderConf.locals || {}, core, false);
 //设置一个签名cookie的秘钥
 app.keys = [renderConf.locals.$app.name];
 
-//koa的上线文封装了request和response到一个对象中，平常上下文被寄存在this中
+//koa的上下文封装了request和response到一个对象中，平常上下文被寄存在this中
 //为了使用方便许多的上下文的方法属性被委托代理到request和response对象里面了
 app.use(errorhandler());
 app.use(bodyparser());

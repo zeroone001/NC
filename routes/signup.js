@@ -7,7 +7,6 @@ exports.get = function* () {
 
 exports.post = function* () {
   var data = this.request.body;
-
   var userExist = yield $User.getUserByName(data.name);
   if (userExist) {
     this.flash = {error: '用户名已存在!'};

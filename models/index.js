@@ -13,3 +13,5 @@ exports.User = require('./user');
 exports.Topic = require('./topic');
 exports.Comment = require('./comment');
 exports.Scrape = require('./scrape');
+//score集合存有积分
+exports.Score = require('./score');
