@@ -1,3 +1,4 @@
+<% var scores = yield $Score.findScore() %>
 <div class="ui cards">
     <div class="card">
         <div class="content">
@@ -5,7 +6,10 @@
             <div class="ui divider"></div>
             <div class="ui list">
                 <div class="item">
-                    <a href="http://www.smzdm.com/" target="_blank"><img src="/images/smzdm.png" style="width:100%"></a>
+                    <ol>
+                        <% scores.forEach(%>
+                        <li><span class="top_score"><%= %></span></li>
+                    </ol>
                 </div>
             </div>
         </div>

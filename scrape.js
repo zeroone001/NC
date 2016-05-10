@@ -4,10 +4,11 @@
 var cheerio = require('cheerio');
 var superagent = require('superagent');
 var Scrape = require('./lib/core').$Scrape;
+var Score = require('./lib/core').$Score;
 function _scrape(){
     superagent.get('https://cnodejs.org/').end(function(err,res){
         var $ = cheerio.load(res.text);
-        var items = [];
+        var items = [],contents = [];
         $('#topic_list .cell').each(function(index,element){
             //element = this;
             var $element = $(element);
@@ -34,6 +35,21 @@ function _scrape(){
             (function(i){
                 Scrape.create(items[i]);
             })(i);
+        }
+        $('#sidebar .panel').eq(4).find('.inner li').each(function (index,element) {
+            var _self = $(element);
+            var score = _self.find('.top_score').text();
+            var name = _self.find('.user_name a').text();
+            contents.push({
+                name:name,
+                score:score
+            });
+
+        });
+        for(var j = 0;j<contents.length;j++){
+            (function(j){
+                Scrape.create(contents[j]);
+            })(j);
         }
     });
 }
