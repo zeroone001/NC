@@ -5,10 +5,13 @@
             <b>积分榜</b>
             <div class="ui divider"></div>
             <div class="ui list">
-                <div class="item">
+                <div class="item score-ol">
                     <ol>
-                        <% scores.forEach(%>
-                        <li><span class="top_score"><%= %></span></li>
+                        <% scores.forEach(function(score,index){ %>
+                        <li><span class="top_score"><%= score.score %></span>
+                        <span class="user_name"><a href="https://cnodejs.org/user/<%= score.name %>"><%= score.name %></a></span>
+                        </li>
+                        <% });%>
                     </ol>
                 </div>
             </div>

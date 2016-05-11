@@ -48,12 +48,37 @@ function _scrape(){
         });
         for(var j = 0;j<contents.length;j++){
             (function(j){
-                Scrape.create(contents[j]);
+                Score.create(contents[j]);
+            })(j);
+        }
+    });
+}
+function _score(){
+    superagent.get('https://cnodejs.org/users/top100').end(function(err,res) {
+        var $ = cheerio.load(res.text);
+        var contents = [];
+        $('#content .panel').find('.inner tr').each(function (index,element) {
+            var _self = $(element);
+            var score = _self.find('td').eq(2).text();
+            var name = _self.find('td').eq(1).last().text().replace(/(\n)|(\s{1,})/g,'');
+            contents.push({
+                name:name,
+                score:score
+            });
+
+        });
+        for(var j = 0;j<contents.length;j++){
+            (function(j){
+                Score.create(contents[j]);
             })(j);
         }
     });
 }
 
+function init(){
+    _scrape();
+    _score();
+}
 exports.scrape = function(){
-    return _scrape();
+    return init();
 };

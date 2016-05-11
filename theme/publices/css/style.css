@@ -29,3 +29,17 @@ div#settings form input.button{
 #sec_form{
     margin-top: 30px;
 }
+.score-ol ol{
+    padding-left: 0;
+}
+.score-ol li{
+    list-style-type: none;
+}
+.top_score {
+    color: gray;
+    padding: 2px;
+    margin-right: 10px;
+}
+.list .score-ol span.user_name a {
+    color: #778087 !important;
+}
