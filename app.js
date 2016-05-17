@@ -1,9 +1,9 @@
-var app = require('koa')();
+var app = require('koa')();//调用koa,并且初始化
 var logger = require('koa-logger');
-var bodyparser = require('koa-bodyparser');
-var staticCache  = require('koa-static-cache');
-var errorhandler = require('koa-errorhandler');
-var session = require('koa-generic-session');
+var bodyparser = require('koa-bodyparser'); //bodyParser中间件用来解析http请求体
+var staticCache  = require('koa-static-cache'); //处理KOA静态服务的中间件
+var errorhandler = require('koa-errorhandler'); //错误处理中间件，跟KOA配套的
+var session = require('koa-generic-session'); //通用的session中间件
 var MongoStore = require('koa-generic-session-mongo');
 var flash = require('koa-flash');
 var gzip = require('koa-gzip');

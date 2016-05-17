@@ -1,7 +1,7 @@
 {
-  "name": "N-club",
-  "version": "0.0.1",
-  "description": "N-club for koa.",
+  "name": "NodeClub",
+  "version": "0.0.5",
+  "description": "N-club for koa",
   "scripts": {
     "preinstall": "cd theme && npm install",
     "start": "NODE_ENV=default DEBUG=* node --harmony app",
