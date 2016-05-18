@@ -1,5 +1,5 @@
 /**
- * Created by smzdm on 16/4/24.
+ * Created by liuyongsheng on 16/4/24.
  */
 var Models = require('../lib/core');
 var $User = Models.$User;
